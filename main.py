@@ -47,7 +47,7 @@ async def restart_handler(_, m):
 
 @bot.on_message(filters.command(["shaikh"]))
 async def upload(bot: Client, m: Message):
-    editable = await m.reply_text('𝕤ᴇɴᴅ me Your ᴛxᴛ ғɪʟᴇ ⚡️')
+    editable = await m.reply_text('✨𝕤ᴇɴᴅ ​🇲​​🇪​ ​🇾​​🇴​​🇺​​🇷​ ᴛ​🇽​ᴛ ғɪʟᴇ ⚡️')
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -210,7 +210,7 @@ async def upload(bot: Client, m: Message):
 
     except Exception as e:
         await m.reply_text(e)
-    await m.reply_text("**🗣𝔻ᴏɴᴇ 𝔹ᴏ𝕤𝕤😎**")
+    await m.reply_text("**🗣 ​🇩​​🇴​​🇳​​🇪​ ✨**")
 
 
 bot.run()
