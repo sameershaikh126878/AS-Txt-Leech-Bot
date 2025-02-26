@@ -47,7 +47,7 @@ async def restart_handler(_, m):
 
 @bot.on_message(filters.command(["shaikh"]))
 async def upload(bot: Client, m: Message):
-    editable = await m.reply_text('𝕤ᴇɴᴅ me ᴛxᴛ ғɪʟᴇ ⚡️')
+    editable = await m.reply_text('𝕤ᴇɴᴅ me Your ᴛxᴛ ғɪʟᴇ ⚡️')
     input: Message = await bot.listen(editable.chat.id)
     x = await input.download()
     await input.delete(True)
@@ -166,8 +166,8 @@ async def upload(bot: Client, m: Message):
 
             try:  
                 
-                cc = f'**[📽️] Vid_ID:** {str(count).zfill(3)}.** {𝗻𝗮𝗺𝗲𝟭}.mkv\n**📚 BATCH NAME :●➠ » ** » **{raw_text0}**\n\n📥 EXTRACTED BY :- {MR}'
-                cc1 = f'**[📁] Pdf_ID:** {str(count).zfill(3)}. {𝗻𝗮𝗺𝗲𝟭}.pdf \n**📚 BATCH NAME :●➠ » **{raw_text0}**\n\n📥 EXTRACTED BY :- {MR}'
+                cc = f'**[📽️] Vid_ID:** {str(count).zfill(3)}.** {𝗻𝗮𝗺𝗲𝟭} @SAMEER_OFFICAL_091 .mkv\n**📚 BATCH NAME :●➠ » ** » **{raw_text0}**\n\n📥 EXTRACTED BY :- {MR}'
+                cc1 = f'**[📁] Pdf_ID:** {str(count).zfill(3)}. {𝗻𝗮𝗺𝗲𝟭} @SAMEER_OFFICAL_091 .pdf \n**📚 BATCH NAME :●➠ » **{raw_text0}**\n\n📥 EXTRACTED BY :- {MR}'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
