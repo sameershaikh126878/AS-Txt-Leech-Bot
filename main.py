@@ -35,7 +35,7 @@ bot = Client(
 
 @bot.on_message(filters.command(["start"]))
 async def start(bot: Client, m: Message):
-    await m.reply_text(f"<b>Hello {m.from_user.mention} 👋\n\n I͎ ͎A͎m͎ ͎A͎ ͎B͎o͎t͎ ͎F͎o͎r͎ ͎D͎o͎w͎n͎l͎o͎a͎d͎ ͎L͎i͎n͎k͎s͎ ͎F͎r͎o͎m͎ ͎Y͎o͎u͎r͎ ͎ **.T͎X͎T͎** F͎i͎l͎e͎ ͎A͎n͎d͎ ͎T͎h͎e͎n͎ ͎U͎p͎l͎o͎a͎d͎ ͎T͎h͎a͎t͎ ͎F͎i͎l͎e͎ ͎O͎n͎ ͎T͎e͎l͎e͎g͎r͎a͎m͎ ͎S͎o͎ ͎B͎a͎s͎i͎c͎a͎l͎l͎y͎ ͎I͎f͎ ͎Y͎o͎u͎ ͎W͎a͎n͎t͎ ͎T͎o͎ ͎U͎s͎e͎ ͎M͎e͎ ͎F͎i͎r͎s͎t͎ ͎S͎e͎n͎d͎ ͎M͎e͎ /shaikh C͎o͎m͎m͎a͎n͎d͎ ͎A͎n͎d͎ ͎T͎h͎e͎n͎ ͎F͎o͎l͎l͎o͎w͎ ͎F͎e͎w͎ ͎S͎t͎e͎p͎s͎.͎..\n\nU͎s͎e /stop t͎o͎ s͎t͎o͎p͎ a͎n͎y͎ o͎n͎g͎o͎i͎n͎g͎ t͎a͎s͎k͎.</b>")
+    await m.reply_text(f"<b>नमस्ते प्रिय 👋 {m.from_user.mention} 👋\n\n  ➠ 𝐈 𝐚𝐦 𝐚 𝐓𝐞𝐱𝐭 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐞𝐫 𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐖𝐢𝐭𝐡 ♥️ **𝐓𝐗𝐓​** \n\n ​➠ 𝐂𝐚𝐧 𝐄𝐱𝐭𝐫𝐚𝐜𝐭 𝐕𝐢𝐝𝐞𝐨𝐬 & 𝐏𝐝𝐟 𝐅𝐫𝐨𝐦 𝐘𝐨𝐮𝐫 𝐓𝐞𝐱𝐭 𝐅𝐢𝐥𝐞 𝐚𝐧𝐝 𝐔𝐩𝐥𝐨𝐚𝐝 𝐭𝐨 𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦 \n\n ➠ 𝐔𝐬𝐞 /shaikh 𝐂𝐨𝐦𝐦𝐚𝐧𝐝 𝐓𝐨 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝 𝐅𝐫𝐨𝐦 𝐓𝐗𝐓 𝐅𝐢𝐥e..\n\n ➠ 𝐔𝐬𝐞 /stop 𝐓𝐨 𝐬𝐭𝐨𝐩 𝐀𝐧𝐲 𝐎𝐧𝐠𝐨𝐢𝐧𝐠 𝐓𝐚𝐬𝐤 \n\n ➠ 𝐌𝐚𝐝𝐞 𝐁𝐲:- @A_S_9162 </b>")
 
 
 @bot.on_message(filters.command("stop"))
@@ -193,7 +193,7 @@ async def upload(bot: Client, m: Message):
                         time.sleep(e.x)
                         continue
                 else:
-                    Show = f"**⥥ 🄳🄾🅆🄽🄻🄾🄰🄳🄸🄽🄶⬇️⬇️... »**\n\n**📝Name »** `{name}\n❄Quality » {raw_text2}`\n\n**🔗URL »** `{url}`"
+                    Show = f"**⥥ ​🇩​​🇴​​🇼​​🇳​​🇱​​🇴​​🇦​​🇩​​🇮​​🇳​​🇬⬇️⬇️... »**\n\n**📝Name »** `{name}\n❄Quality » {raw_text2}`\n\n**🔗URL »** `{url}`"
                     prog = await m.reply_text(Show)
                     res_file = await helper.download_video(url, cmd, name)
                     filename = res_file
