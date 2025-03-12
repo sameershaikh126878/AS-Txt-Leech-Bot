@@ -39,7 +39,7 @@ async def start(bot: Client, m: Message):
 
 @bot.on_message(filters.command("ruko"))
 async def restart_handler(_, m):
-    await m.reply_text("**​🇸​​🇹​​🇴​​🇵​​🇵​​🇪​​🇩​**🚦", True)
+    await m.reply_text("**𝗝𝗔𝗜𝗦𝗜 𝗔𝗔𝗣𝗞𝗜 𝗔𝗚𝗜𝗬𝗔 𝗚𝗨𝗥𝗨 𝗝𝗜​**🚦", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
 
