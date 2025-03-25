@@ -113,7 +113,7 @@ async def upload(bot: Client, m: Message):
     else:
         MR = raw_text3
    
-    await editable.edit("Now send the Thumb url/nEg » https://graph.org/file/ce1723991756e48c35aa1.jpg \n Or if don't want thumbnail send = no")
+    await editable.edit("Now send the Thumb url/nEg » https://i.ibb.co/T6cnYmm/image.jpg \n Or if don't want thumbnail send = no")
     input6 = message = await bot.listen(editable.chat.id)
     raw_text6 = input6.text
     await input6.delete(True)
@@ -165,8 +165,8 @@ async def upload(bot: Client, m: Message):
 
             try:  
                 
-                cc = f'**[📽️] Vid_ID:** {str(count).zfill(3)}.** {𝗻𝗮𝗺𝗲𝟭} @JB_OFFICIAL2210.mkv \n\n**📚𝐁𝐀𝐓𝐂𝐇 :➠**  **{raw_text0}**\n\n📥 𝗘𝗫𝗧𝗥𝗔𝗖𝗧𝗘𝗗 𝗕𝗬 : {MR}\n\n━━━━━━━━✦𝗝❤️𝗕✦━━━━━━━━'
-                cc1 = f'**[📁] Pdf_ID:** {str(count).zfill(3)}. {𝗻𝗮𝗺𝗲𝟭} @JB_OFFICIAL2210.mkv \n\n**📚𝐁𝐀𝐓𝐂𝐇 :➠**  **{raw_text0}**\n\n📥 𝗘𝗫𝗧𝗥𝗔𝗖𝗧𝗘𝗗 𝗕𝗬 : {MR}\n\n━━━━━━━━✦𝗝❤️𝗕✦━━━━━━━━'
+                cc = f'**[📽️] Vid_ID:** {str(count).zfill(3)}.** {𝗻𝗮𝗺𝗲𝟭}.mkv \n\n**📚𝐁𝐀𝐓𝐂𝐇 :➠**  **{raw_text0}**\n\n📥 𝗘𝗫𝗧𝗥𝗔𝗖𝗧𝗘𝗗 𝗕𝗬 : {MR}\n\n━━━━━━━━✦𝗗𝗢𝗖𝗧𝗢𝗥❤️✦━━━━━━━━'
+                cc1 = f'**[📁] Pdf_ID:** {str(count).zfill(3)}. {𝗻𝗮𝗺𝗲𝟭} .mkv \n\n**📚𝐁𝐀𝐓𝐂𝐇 :➠**  **{raw_text0}**\n\n📥 𝗘𝗫𝗧𝗥𝗔𝗖𝗧𝗘𝗗 𝗕𝗬 : {MR}\n\n━━━━━━━━✦𝗗𝗢𝗖𝗧𝗢𝗥❤️✦━━━━━━━━'
                 if "drive" in url:
                     try:
                         ka = await helper.download(url, name)
