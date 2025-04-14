@@ -1,100 +1,41 @@
-# Don't Remove Credit Tg - @DOCTOR_ASP
-# Subscribe YouTube Channel For Amazing Bot https://t.me/TXT_UPDATE_AS
-# Ask Doubt on telegram @A_S_9162
-
-import time
-import math
-import os
-from pyrogram.errors import FloodWait
-
-class Timer:
-    def __init__(self, time_between=5):
-        self.start_time = time.time()
-        self.time_between = time_between
-
-    def can_send(self):
-        if time.time() > (self.start_time + self.time_between):
-            self.start_time = time.time()
-            return True
-        return False
-
-
-from datetime import datetime,timedelta
-
-def hrb(value, digits= 2, delim= "", postfix=""):
-    """Return a human-readable file size.
-    """
-    if value is None:
-        return None
-    chosen_unit = "B"
-    for unit in ("KiB", "MiB", "GiB", "TiB"):
-        if value > 1000:
-            value /= 1024
-            chosen_unit = unit
-        else:
-            break
-    return f"{value:.{digits}f}" + delim + chosen_unit + postfix
-
-def hrt(seconds, precision = 0):
-    """Return a human-readable time delta as a string.
-    """
-    pieces = []
-    value = timedelta(seconds=seconds)
-    
-
-    if value.days:
-        pieces.append(f"{value.days}d")
-
-    seconds = value.seconds
-
-    if seconds >= 3600:
-        hours = int(seconds / 3600)
-        pieces.append(f"{hours}h")
-        seconds -= hours * 3600
-
-    if seconds >= 60:
-        minutes = int(seconds / 60)
-        pieces.append(f"{minutes}m")
-        seconds -= minutes * 60
-
-    if seconds > 0 or not pieces:
-        pieces.append(f"{seconds}s")
-
-    if not precision:
-        return "".join(pieces)
-
-    return "".join(pieces[:precision])
-
-
-
-timer = Timer()
-
-async def progress_bar(current, total, reply, start):
+async def progress_bar(current, total, reply, start, your_batch_name="Not Set", your_file_name="Unknown File", total_links=0):
     if timer.can_send():
         now = time.time()
         diff = now - start
         if diff < 1:
             return
         else:
-            perc = f"{current * 100 / total:.1f}%"
+            percent = f"{current * 100 / total:.1f}%"
             elapsed_time = round(diff)
             speed = current / elapsed_time
-            remaining_bytes = total - current
-            if speed > 0:
-                eta_seconds = remaining_bytes / speed
-                eta = hrt(eta_seconds, precision=1)
-            else:
-                eta = "-"
-            sp = str(hrb(speed)) + "/s"
-            tot = hrb(total)
-            cur = hrb(current)
-            bar_length = 11
-            completed_length = int(current * bar_length / total)
-            remaining_length = bar_length - completed_length
-            progress_bar = "█" * completed_length + "░" * remaining_length
+            remaining = total - current
+            eta = hrt(remaining / speed, precision=1) if speed > 0 else "-"
             
+            speed_str = f"{hrb(speed)}/s"
+            total_str = hrb(total)
+            current_str = hrb(current)
+            
+            bar_length = 11
+            done = int(current * bar_length / total)
+            left = bar_length - done
+            progress = "█" * done + "░" * left
+
             try:
-                await reply.edit(f'<b>\n ╭──⌯════𝗨𝗣𝗟𝗢𝗔𝗗𝗜𝗡𝗚⬆️⬆️═════⌯──╮ \n├⚡ {progress_bar}|﹝{perc}﹞ \n├🚀 Speed » {sp} \n├📟 Processed » {cur}\n├🧲 Size -🕛 ETA » {tot} - {eta} \n├🤖 𝔹ʏ » @A_S_9162\n╰─═══ ✪ @SAMEER_OFFICAL_092 ✪ ═══─╯\n</b>') 
+                text = (
+                    "<b>\n"
+                    "╭──⌯════⏫ 𝗨𝗣𝗟𝗢𝗔𝗗𝗜𝗡𝗚... ⌯────╮\n"
+                    f"├ 📚 𝗕𝗔𝗧𝗖𝗛 𝗡𝗔𝗠𝗘     » {your_batch_name}\n"
+                    f"├ 📄 𝗙𝗶𝗹𝗲 𝗡𝗮𝗺𝗲      » {your_file_name}\n"
+                    f"├ 🔗 𝗧𝗼𝘁𝗮𝗹 𝗟𝗶𝗻𝗸𝘀     » {total_links}\n"
+                    f"├ 📊 Progress       » {progress} |﹝{percent}﹞\n"
+                    f"├ ⚡ Speed          » {speed_str}\n"
+                    f"├ 📥 Uploaded       » {current_str}\n"
+                    f"├ 📦 Total Size     » {total_str}\n"
+                    f"├ ⏳ ETA            » {eta}\n"
+                    "├ 🤖 Bot by        » <a href='https://t.me/A_S_9162'>@A_S_9162</a>\n"
+                    "╰──═✪ <a href='https://t.me/SAMEER_OFFICAL_092'>SAMEER OFFICAL</a> ✪══─╯\n"
+                    "</b>"
+                )
+                await reply.edit(text, disable_web_page_preview=True)
             except FloodWait as e:
                 time.sleep(e.x)
-
